@@ -1,0 +1,16 @@
+{
+  "name": "edm-auto-rest-api-mock",
+  "version": "0.0.1",
+  "description": "假数据模拟",
+  "main": "index.js",
+  "scripts": {
+    "server": "node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "zhuqiang",
+  "license": "ISC",
+  "devDependencies": {
+    "json-server": "^0.12.1",
+    "faker": "^4.1.0"
+  }
+}
