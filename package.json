@@ -1,6 +1,6 @@
 {
   "name": "edm-auto-rest-api-mock",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "假数据模拟",
   "main": "index.js",
   "scripts": {
