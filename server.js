@@ -35,7 +35,7 @@ server.use((req, res, next) => {
 // 自定义包装返回结果
 // 用于后端统一返回的rest结果集类型
 router.render = (req, res) => {
-    console.log(res)
+    // console.log(res)
     res.jsonp({
         code: 200,
         msg: "业务处理成功",
