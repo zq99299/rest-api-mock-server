@@ -1,3 +1,4 @@
 {
-  "/api/v1/index/signin": "/signin"
+  "/api/v1/index/signin": "/signin",
+  "/api/v1/index/users": "/users"
 }

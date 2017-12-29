@@ -4,7 +4,7 @@ const server = jsonServer.create()
 // const router = jsonServer.router('db.json')
 
 // 使用js构造出来的数据作为数据源
-const routerFun = require('./index.js');
+const routerFun = require('./data/index.js');
 const router = jsonServer.router(routerFun())
 const middlewares = jsonServer.defaults()
 
@@ -22,11 +22,13 @@ server.use((req, res, next) => {
     // This way it will make JSON Server that it's GET request
     if (req.method != 'GET') {
         req.method = 'GET'
-        // 这句话不能要，否则报错。暂时不知道是什么原因，
-        // 貌似把所有请求都伪装成get，其实在业务上来说已经抛弃了json-server提供的其他功能
-        // 只是把这个作为数据源返回
-        // req.query = req.body
+    }
+    req.query = {} // 该行代码可以清空查询参数，但是发现 自定义路由映射的只要带了查询参数就出错
 
+    // 所以这里重定向到没有参数的路径
+    if (req.url.includes('?')) {
+        res.redirect(req.url.replace(/\?.*$/, ''))
+        return
     }
     // Continue to JSON Server router
     next()
